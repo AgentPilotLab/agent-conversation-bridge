@@ -1,0 +1,29 @@
+# Agent Conversation Bridge
+
+This repository provides dual AI agent skill versions for Codex, Claude Code, and skills-capable agents.
+
+Use it when a user asks to transfer an active agent task into another chat, local project, machine, or receiving Codex thread while preserving verified state.
+
+Main entry points:
+
+- Codex skill: `skills/agent-conversation-bridge/SKILL.md`
+- Claude Code skill: `claude-code/agent-conversation-bridge/SKILL.md`
+- Agent guide: `docs/AI_AGENT_GUIDE.md`
+- Claude Code guide: `docs/CLAUDE_CODE_GUIDE.md`
+- Prompt examples: `docs/AGENT_PROMPTS.md`
+- Similarity gate: `docs/SIMILARITY_GATE.md`
+- Validation script: `tools/measure-skill-similarity.ps1`
+
+Core terms:
+
+- Bridge Packet: the written checkpoint artifact.
+- Receiver Mission: the goal and done criteria for the receiving agent.
+- Evidence Register: inspected files, URLs, commands, and facts.
+- Validation Ledger: objective checks and their results.
+- Starter Message or Copyable Restart Prompt: the prompt the user can paste into the receiving session.
+
+Safety:
+
+- Redact secrets and private identifiers.
+- Distinguish Bridge Packets from Codex Remote hand off and Import to Codex.
+- Do not claim completion unless the Validation Ledger proves it.

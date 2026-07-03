@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Conversation Bridge"
+  short_description: "Move Codex or Claude Code work with project-aware checkpoints."
+  default_prompt: "Use $agent-conversation-bridge to move this AI agent task into another session with a verified checkpoint."
