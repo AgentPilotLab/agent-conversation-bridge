@@ -13,6 +13,7 @@ Main entry points:
 - Claude Code guide: `docs/CLAUDE_CODE_GUIDE.md`
 - Prompt examples: `docs/AGENT_PROMPTS.md`
 - Similarity gate: `docs/SIMILARITY_GATE.md`
+- Publishing and GitHub Release checklist: `docs/PUBLISHING.md`
 - Validation script: `tools/measure-skill-similarity.ps1`
 
 Core terms:

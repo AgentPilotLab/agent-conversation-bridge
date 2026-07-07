@@ -47,7 +47,7 @@ Claude Code版本可复制或安装这个目录：
 claude-code/agent-conversation-bridge/
 ```
 
-GitHub Release分发已计划但尚未发布。npm分发尚未发布，因为本仓库当前提供的是skill目录，不是CLI或MCP包。
+GitHub Release分发已计划，并在[发布清单](docs/PUBLISHING.md)中维护。npm分发尚未发布，因为本仓库当前提供的是skill目录，不是CLI或MCP包。
 
 验证Codex skill结构：
 
@@ -130,7 +130,7 @@ name: agent-conversation-bridge
 
 ## GitHub Release
 
-稳定版本计划使用GitHub Release分发。Release说明应包含`What changed`、`Install or upgrade`、`Codex setup`、`Claude Code setup`、`Verification`、`Privacy and license`和`Support`。
+稳定版本计划使用GitHub Release分发。Release应使用[发布清单](docs/PUBLISHING.md)中的模板，并包含`What changed`、`Install or upgrade`、`Codex setup`、`Claude Code setup`、`Verification`、`Privacy and license`和`Support`。
 
 Release附件不得包含`.env`文件、本地snapshot、日志、cache、私有测试数据、本机路径、token或未脱敏项目材料。
 
@@ -142,7 +142,7 @@ Release附件不得包含`.env`文件、本地snapshot、日志、cache、私有
 - [Agent prompt示例](docs/AGENT_PROMPTS.md)
 - [Claude Code指南](docs/CLAUDE_CODE_GUIDE.md)
 - [相似度Gate](docs/SIMILARITY_GATE.md)
-- [发布清单](docs/PUBLISHING.md)
+- [发布与GitHub Release清单](docs/PUBLISHING.md)
 - [Codex skill文件](skills/agent-conversation-bridge/SKILL.md)
 - [Claude Code skill文件](claude-code/agent-conversation-bridge/SKILL.md)
 

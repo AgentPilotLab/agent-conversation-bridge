@@ -43,7 +43,7 @@ npx skills add https://github.com/AgentPilotLab/agent-conversation-bridge --skil
 
 For Claude Code, copy or install `claude-code/agent-conversation-bridge/` into the Claude Code skills location used by your setup.
 
-GitHub Release distribution is planned. npm distribution is not published yet because this repository currently ships skill folders, not a CLI or MCP package.
+GitHub Release distribution is planned and tracked in [Publishing checklist](docs/PUBLISHING.md). npm distribution is not published yet because this repository currently ships skill folders, not a CLI or MCP package.
 
 Validate the Codex skill folder:
 
@@ -126,7 +126,7 @@ Examples use placeholder paths such as `<PROJECT_DIR>` and `<USER_HOME>` when a 
 
 ## GitHub Release
 
-GitHub Release distribution is planned for stable versions. A release should include notes for `What changed`, `Install or upgrade`, `Codex setup`, `Claude Code setup`, `Verification`, `Privacy and license`, and `Support`.
+GitHub Release distribution is planned for stable versions. A release should use the template in [Publishing checklist](docs/PUBLISHING.md) and include notes for `What changed`, `Install or upgrade`, `Codex setup`, `Claude Code setup`, `Verification`, `Privacy and license`, and `Support`.
 
 Release assets must not include `.env` files, local snapshots, logs, cache files, private test data, local paths, tokens, or unredacted project material.
 
@@ -139,7 +139,7 @@ Release assets must not include `.env` files, local snapshots, logs, cache files
 - [Agent prompt examples](docs/AGENT_PROMPTS.md)
 - [Claude Code guide](docs/CLAUDE_CODE_GUIDE.md)
 - [Similarity gate](docs/SIMILARITY_GATE.md)
-- [Publishing checklist](docs/PUBLISHING.md)
+- [Publishing and GitHub Release checklist](docs/PUBLISHING.md)
 - [Codex skill file](skills/agent-conversation-bridge/SKILL.md)
 - [Claude Code skill file](claude-code/agent-conversation-bridge/SKILL.md)
 
