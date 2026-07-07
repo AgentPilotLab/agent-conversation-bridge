@@ -1,10 +1,7 @@
 # Agent Conversation Bridge Skill For Codex And Claude Code
 
-[中文README](README.zh-CN.md)
-
-<a href="https://buymeacoffee.com/mira.ai">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy me a coffee" width="180">
-</a>
+[![中文README](https://img.shields.io/badge/README-中文-blue?style=flat-square)](README.zh-CN.md)
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-mira.ai-FFDD00?style=flat-square&logo=buymeacoffee&logoColor=000)](https://buymeacoffee.com/mira.ai)
 
 Use this repository when Codex, Claude Code, or another AI agent needs to move an active task into another chat, another local project, another machine, or a receiving Codex thread without losing verified project state.
 
@@ -58,7 +55,7 @@ Check similarity against the public `mattpocock/skills` reference:
 powershell -ExecutionPolicy Bypass -File .\tools\measure-skill-similarity.ps1
 ```
 
-## Skill Surface
+## Tool Surface
 
 - Builds a Bridge Packet for Codex conversation transfer and Claude Code task migration.
 - Provides separate Codex and Claude Code skill entry points.
@@ -111,6 +108,16 @@ Minimal validation is to open the Claude Code skill file and confirm the frontma
 ```yaml
 name: agent-conversation-bridge
 ```
+
+## Similar Projects
+
+Star counts were queried on 2026-07-07 with GitHub CLI and may change.
+
+| Project | Stars | Their strengths | Our differentiation | Best fit | Gaps or unverified areas |
+| --- | ---: | --- | --- | --- | --- |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | 159,316 | Large public skill collection with a simple `handoff` skill and broad community visibility. | This repository focuses on a distinct Bridge Packet workflow, dual Codex/Claude Code entry points, similarity-gate verification, and AgentPilotLab release/privacy/license checklists. | Agents that need verifiable conversation transfer rather than a short handoff note. | Smaller project; fewer community examples and no published GitHub Release yet. |
+| [anthropics/skills](https://github.com/anthropics/skills) | 159,020 | Official public Agent Skills examples and strong ecosystem recognition. | This repository is narrower and operational: it ships concrete Codex and Claude Code transfer instructions, local project bridge rules, and release packaging guidance. | Teams that want one focused cross-agent session-transfer skill. | Not an official Anthropic collection; Claude Code install location still depends on the user's environment. |
+| [microsoft/agent-framework](https://github.com/microsoft/agent-framework) | 11,919 | Full framework for building, orchestrating, and deploying agents and multi-agent workflows. | This repository is intentionally lightweight: no framework runtime, just skill files and AI-readable handoff workflow documentation. | Users who need session continuity instructions, not a full agent orchestration framework. | Does not provide orchestration APIs, deployment runtime, or multi-agent execution engine. |
 
 ## License
 

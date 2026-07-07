@@ -1,10 +1,7 @@
 # Agent Conversation Bridge：面向Codex和Claude Code的AIagent会话交接Skill
 
-[English README](README.md)
-
-<a href="https://buymeacoffee.com/mira.ai">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy me a coffee" width="180">
-</a>
+[![English README](https://img.shields.io/badge/README-English-blue?style=flat-square)](README.md)
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-mira.ai-FFDD00?style=flat-square&logo=buymeacoffee&logoColor=000)](https://buymeacoffee.com/mira.ai)
 
 当用户希望把一个正在进行的AIagent任务转移到另一个对话、另一个本地项目、另一台电脑，或一个新的Codex线程时，可以使用本仓库。
 
@@ -62,7 +59,7 @@ python $validator .\skills\agent-conversation-bridge
 powershell -ExecutionPolicy Bypass -File .\tools\measure-skill-similarity.ps1
 ```
 
-## Skill Surface
+## Tool Surface
 
 - 生成面向接收agent的Bridge Packet，用于Codex会话转移和Claude Code任务迁移。
 - 提供独立的Codex和Claude Code skill入口。
@@ -115,6 +112,16 @@ Claude Code状态：`supported`。支持folder relay、machine relay、agent rel
 ```yaml
 name: agent-conversation-bridge
 ```
+
+## Similar Projects
+
+star数量于2026-07-07通过GitHub CLI查询，之后可能变化。
+
+| 项目 | stars | 对方主要优势 | 我们的差异化优势 | 最适合场景 | 仍未覆盖或仍需验证 |
+| --- | ---: | --- | --- | --- | --- |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | 159,316 | 大型公开skill集合，包含简洁的`handoff`skill，社区可见度高。 | 本仓库聚焦原创Bridge Packet工作流、Codex/Claude Code双入口、相似度Gate验证，以及AgentPilotLab的release/privacy/license清单。 | 需要可验证会话转移，而不只是简短交接说明的agent任务。 | 项目更小，社区示例较少，尚未发布GitHub Release。 |
+| [anthropics/skills](https://github.com/anthropics/skills) | 159,020 | 官方公开Agent Skills示例，生态识别度强。 | 本仓库更窄、更操作化：提供具体Codex和Claude Code转移说明、本地项目桥接规则和发布包装指南。 | 需要一个聚焦跨agent session transfer skill的团队或个人。 | 不是Anthropic官方集合；Claude Code安装位置仍取决于用户环境。 |
+| [microsoft/agent-framework](https://github.com/microsoft/agent-framework) | 11,919 | 面向构建、编排和部署agent及multi-agent workflow的完整框架。 | 本仓库刻意保持轻量：不提供框架runtime，只提供skill文件和AI可读交接workflow文档。 | 需要session continuity说明，而不是完整agent编排框架的用户。 | 不提供编排API、部署runtime或multi-agent执行引擎。 |
 
 ## License
 
