@@ -26,9 +26,16 @@ Both versions create Bridge Packets with evidence registers, validation ledgers,
 
 ## Quick Start
 
-Requirements: Codex or another skills-capable AI agent, plus permission to install a local or GitHub-hosted skill.
+Requirements: Codex, Claude Code, or another skills-capable AI agent, plus permission to install a local or GitHub-hosted skill.
 
-Install the Codex skill from GitHub after this repository is published:
+Install from the source tree when an agent can read this repository directly:
+
+```text
+skills/agent-conversation-bridge/
+claude-code/agent-conversation-bridge/
+```
+
+Install the Codex skill from GitHub:
 
 ```powershell
 npx skills add https://github.com/AgentPilotLab/agent-conversation-bridge --skill agent-conversation-bridge
@@ -36,7 +43,9 @@ npx skills add https://github.com/AgentPilotLab/agent-conversation-bridge --skil
 
 For Claude Code, copy or install `claude-code/agent-conversation-bridge/` into the Claude Code skills location used by your setup.
 
-Validate the skill folder locally:
+GitHub Release distribution is planned. npm distribution is not published yet because this repository currently ships skill folders, not a CLI or MCP package.
+
+Validate the Codex skill folder:
 
 ```powershell
 $validator = Join-Path $env:USERPROFILE ".codex\skills\.system\skill-creator\scripts\quick_validate.py"
@@ -51,12 +60,75 @@ powershell -ExecutionPolicy Bypass -File .\tools\measure-skill-similarity.ps1
 
 ## Skill Surface
 
-- Builds a Bridge Packet for Codex conversation transfer.
-- Provides a Claude Code version for folder relays and machine relays.
-- Selects transfer mode: same-project restart, local project bridge, machine migration, Codex Remote explanation, or Import to Codex explanation.
+- Builds a Bridge Packet for Codex conversation transfer and Claude Code task migration.
+- Provides separate Codex and Claude Code skill entry points.
+- Selects transfer mode: same-project restart, local project bridge, machine migration, Codex Remote explanation, Import to Codex explanation, folder relay, machine relay, or agent relay.
 - Writes packet locations appropriate to target project, OS temp, or ASCII-safe openable paths.
 - Records evidence, changes, commands, decisions, validation, risks, next actions, and skill routing.
-- Creates receiving Codex thread instructions when thread tools are available.
+- Creates receiving Codex thread instructions when Codex thread tools are available and the user requested that workflow.
+
+## Codex Setup
+
+Codex should use:
+
+```text
+skills/agent-conversation-bridge/SKILL.md
+```
+
+Install with the skills CLI:
+
+```powershell
+npx skills add https://github.com/AgentPilotLab/agent-conversation-bridge --skill agent-conversation-bridge
+```
+
+Verify the Codex skill structure:
+
+```powershell
+$validator = Join-Path $env:USERPROFILE ".codex\skills\.system\skill-creator\scripts\quick_validate.py"
+python $validator .\skills\agent-conversation-bridge
+```
+
+Use it when the user asks Codex to transfer a task, preserve session state, create a local project bridge, or prepare a receiving Codex thread.
+
+## Claude Code Setup
+
+Claude Code should use:
+
+```text
+claude-code/agent-conversation-bridge/SKILL.md
+```
+
+Copy or install this folder into the Claude Code skills location used by your environment:
+
+```text
+claude-code/agent-conversation-bridge/
+```
+
+Claude Code status: `supported` for folder relays, machine relays, agent relays, and copyable restart prompts. Codex-only thread creation is not part of the Claude Code version.
+
+Minimal validation is to open the Claude Code skill file and confirm the frontmatter contains:
+
+```yaml
+name: agent-conversation-bridge
+```
+
+## License
+
+This repository uses the AgentPilotLab Non-Commercial License. See [LICENSE](LICENSE).
+
+Free use is limited to non-commercial purposes such as personal use, learning, research, and evaluation. Commercial use requires prior written permission from AgentPilotLab and payment of the agreed commercial license fee.
+
+## Privacy
+
+This repository is designed for public distribution and should not contain private credentials, local machine paths, account-private data, logs, browser history, cookies, tokens, or personal identifiers.
+
+Examples use placeholder paths such as `<PROJECT_DIR>` and `<USER_HOME>` when a local path is needed. Before publishing changes, run a privacy scan for legacy account names, private emails, local absolute paths, credential labels, and generated artifacts.
+
+## GitHub Release
+
+GitHub Release distribution is planned for stable versions. A release should include notes for `What changed`, `Install or upgrade`, `Codex setup`, `Claude Code setup`, `Verification`, `Privacy and license`, and `Support`.
+
+Release assets must not include `.env` files, local snapshots, logs, cache files, private test data, local paths, tokens, or unredacted project material.
 
 ## AI Entry Points
 
@@ -74,10 +146,6 @@ powershell -ExecutionPolicy Bypass -File .\tools\measure-skill-similarity.ps1
 ## Repository Keywords
 
 Codex skill, Claude Code skill, Codex conversation transfer, Claude Code task migration, AI agent checkpoint, AI agent handoff alternative, Codex thread migration, local project bridge, context preservation, skills CLI, AgentPilotLab.
-
-## License
-
-This repository uses the AgentPilotLab Non-Commercial License. See [LICENSE](LICENSE).
 
 ## Support
 
