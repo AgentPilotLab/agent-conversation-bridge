@@ -1,5 +1,7 @@
 # Agent Conversation Bridge Skill For Codex And Claude Code
 
+[中文README](README.zh-CN.md)
+
 <a href="https://buymeacoffee.com/mira.ai">
   <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy me a coffee" width="180">
 </a>
@@ -58,6 +60,7 @@ powershell -ExecutionPolicy Bypass -File .\tools\measure-skill-similarity.ps1
 
 ## AI Entry Points
 
+- [Chinese README](README.zh-CN.md)
 - [llms.txt](llms.txt)
 - [Agent instructions](AGENTS.md)
 - [AI agent guide](docs/AI_AGENT_GUIDE.md)

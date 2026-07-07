@@ -6,6 +6,7 @@ Use it when a user asks to transfer an active agent task into another chat, loca
 
 Main entry points:
 
+- Chinese README: `README.zh-CN.md`
 - Codex skill: `skills/agent-conversation-bridge/SKILL.md`
 - Claude Code skill: `claude-code/agent-conversation-bridge/SKILL.md`
 - Agent guide: `docs/AI_AGENT_GUIDE.md`
